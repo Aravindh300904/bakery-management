@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="brown.jpg">
+    <link rel="stylesheet" href="burger.css">
+</head>
+
+<body>
+    <div class="list">
+    <h1>B</h1>
+    <h4>ROWNIES </h4>
+    <h3>&</h3>
+    <h5>URGERS</h5>
+
+    <hr><marquee behavior="" direction="right">OPEN 9.00 AM | CLOSE 9.00 PM</marquee><hr>
+
+    </div>
+     <div class="bg">
+    <div class="head">
+        <ul>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="burger.html">BURGERS</a></li>
+            <li><a href="brownie.html">BROWNIES</a></li>
+            <li><a href="feedback.html">FEED BACK</a></li>
+        </ul>
+    </div><br><br><br>
+    <div class="cake"> <h1 >BURGERS</h1></div>
+   
+    
+<div class="image1">
+        <img src="bur1.jpg" height="200px" width="200px">
+        <h1 style="font-size: small;"><center>Italian Stallian Burger</center></h1>
+        <h5><center>₹120 <del>150</center></del></h5>
+        <button onclick="openOrderModal('Italian Stallian Burger', 120)">Order</button>
+
+</div>
+<div class="image2">
+        <img src="bur2.jpg" height="200px" width="200px">
+       <h1 style="font-size: smaller;"><center>BBQ Burger</center></h1>
+        <h5><center>₹100 <del>170</center></del></h5>
+          <button onclick="openOrderModal('BBQ Burger', 100)">Order</button>
+</div>  
+
+<div class="image3">
+    <img src="bur3.jpg" height="200px" width="200px">
+ <h1 style="font-size: smaller;"><center>Veg Burger with French Fries</center></h1>
+  <h5><center>₹110 <del>190</center></del></h5>
+    <button onclick="openOrderModal(' Veg Burger', 110)">Order</button>
+</div><br><br><br><br><br><br><br>
+
+
+<div class="image4">
+        <img src="bur4.jpg" height="200px" width="200px">
+        <h1 style="font-size: small;"><center>Smoky Burger</center></h1>
+        <h5><center>₹70 <del>150</center></del></h5>
+        <button onclick="openOrderModal('Smoky Burger', 70)">Order</button></a>
+    </div>
+
+<div class="image5">
+        <img src="bur5.jpg" height="200px" width="200px">
+       <h1 style="font-size: smaller;"><center>Buttermilk Fried Chicken Burger</center></h1>
+        <h5><center>₹90 <del>170</center></del></h5>
+          <button onclick="openOrderModal('Buttermilk Fried Chicken Burger', 90)">Order</button></a>
+</div>  
+
+<div class="image6">
+    <img src="bur6.jpg" height="200px" width="200px">
+ <h1 style="font-size: smaller;"><center>Spicy Crispy Chicken Burger</center></h1>
+  <h5><center>₹110 <del>220</center></del></h5>
+   <button onclick="openOrderModal('Spicy Crispy Chicken Burger', 110)">Order</button>
+</div><BR><BR><br><br><br><br>
+
+
+<div class="image7">
+    <img src="spiced chicken burger.jpg" height="200px" width="200px">
+ <h1 style="font-size: smaller;"><center>Spiced chicken burger</center></h1>
+  <h5><center>₹210 <del>250</center></del></h5>
+ <button onclick="openOrderModal('Spiced Chicken  Burger', 210)">Order</button>
+</div>
+
+<div class="image8">
+    <img src="saltmint.jpg" height="200px" width="200px">
+ <h1 style="font-size: smaller;"><center>Salt mint burger</center></h1>
+  <h5><center>₹100 <del>150</center></del></h5>
+   <button onclick="openOrderModal('Smoky Burger', 100)">Order</button>
+</div>
+
+<div class="image9">
+    <img src="buffalo burger.jpg" height="200px" width="200px">
+ <h1 style="font-size: smaller;"><center>Buffalo burger</center></h1>
+  <h5><center>₹200 <del>250</center></del></h5>
+    <button onclick="openOrderModal('Buffalo Burger', 200)">Order</button>
+</div><br><br><br><br><br><br>
+</div>
+
+
+
+</div>
+<script>
+  let price = 0;
+  let quantity = 1;
+  let productName = '';
+
+  function openOrderModal(name, cost) {
+    productName = name;
+    price = cost;
+    quantity = 1;
+    document.getElementById("product-name").innerText = productName;
+    document.getElementById("price").innerText = "₹" + price;
+    document.getElementById("quantity").innerText = quantity;
+    document.getElementById("total").innerText = "₹" + price;
+    document.getElementById("orderModal").style.display = "block";
+  }
+
+  function closeModal() {
+    document.getElementById("orderModal").style.display = "none";
+  }
+
+  function updateTotal(change) {
+    quantity += change;
+    if (quantity < 1) quantity = 1;
+    document.getElementById("quantity").innerText = quantity;
+    document.getElementById("total").innerText = "₹" + (price * quantity);
+  }
+
+  function placeOrder() {
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const address = document.getElementById("address").value;
+
+    if (!name || !phone || !address) {
+      alert("Please fill all details.");
+      return;
+    }
+
+    alert("Order placed!\nThank you, " + name + "!");
+    console.log("Product:", productName);
+    console.log("Qty:", quantity);
+    console.log("Total:", price * quantity);
+    closeModal();
+  }
+</script>
+
+
+<div id="orderModal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <h2>Order: <span id="product-name">...</span></h2>
+    <p>Price: <span id="price">₹0</span></p>
+    <p>Quantity: 
+      <button onclick="updateTotal(-1)">-</button>
+      <span id="quantity">1</span>
+      <button onclick="updateTotal(1)">+</button>
+    </p>
+    <p>Total: <span id="total">₹0</span></p>
+
+    <h3>Your Details</h3>
+    <form onsubmit="event.preventDefault(); placeOrder();">
+      <input type="text" id="name" placeholder="Your Name" required><br><br>
+      <input type="tel" id="phone" placeholder="Phone Number" required><br><br>
+      <textarea id="address" placeholder="Your Address" required></textarea><br><br>
+      <button type="submit">Place Order</button>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

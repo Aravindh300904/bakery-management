@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="brown.jpg">
+    <link rel="stylesheet" href="brownie.css">
+</head>
+<body>
+    <div class="list">
+    <h1>B</h1>
+    <h4>ROWNIES </h4>
+    <h3>&</h3>
+    <h5>URGERS</h5>
+
+    <hr><marquee behavior="" direction="right">OPEN 9.00 AM | CLOSE 9.00 PM</marquee><hr>
+
+    </div>
+     <div class="bg">
+    <div class="head">
+        <ul>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="burger.html">BURGERS</a></li>
+            <li><a href="brownie.html">BROWNIES</a></li>
+            <li><a href="feedback.html">FEED BACK</a></li>
+        </ul>
+    </div><br><br><br>
+    <div class="cake"> <h1 >BROWNIES</h1></div>
+   
+    
+<div class="image1">
+  <img src="rich-chocolate-brownie-with-vanilla-bean-ice-cream-76209-1.jpeg" height="200px" width="200px">
+  <h1 style="font-size: small;"><center>Brownie with ice cream</center></h1>
+  <h5><center>₹120 <del>150</del></center></h5>
+<button onclick="openOrderModal('brownie with ice cream', 120)">Order</button>
+</div>
+
+<div class="image2">
+  <img src="brownie ice.jpg" height="200px" width="200px">
+  <h1 style="font-size: smaller;"><center>Chocolate Brownie</center></h1>
+  <h5><center>₹100 <del>170</del></center></h5>
+  <button onclick="openOrderModal('Chocolate Brownie', 100)">Order</button></a>
+</div>
+
+<div class="image3">
+  <img src="choco brownie.jpg" height="200px" width="200px">
+  <h1 style="font-size: smaller;"><center>Dark Chocolate brownie</center></h1>
+  <h5><center>₹110 <del>190</del></center></h5>
+  <button onclick="openOrderModal('Dark chocolate brownie', 110)">Order</button>
+</div><br><br><br><br><br><br>
+
+<div class="image4">
+  <img src="walnut brownie.jpg" height="200px" width="200px">
+  <h1 style="font-size: small;"><center>Walnut Brownie</center></h1>
+  <h5><center>₹70 <del>150</del></center></h5>
+ <button onclick="openOrderModal('Walnut Brownie', 70)">Order</button>
+</div>
+
+<div class="image5">
+  <img src="pistachio.jpg" height="200px" width="200px">
+  <h1 style="font-size: smaller;"><center>Pistachio Brownie</center></h1>
+  <h5><center>₹90 <del>170</del></center></h5>
+ <button onclick="openOrderModal('Pistachio Brownie', 90)">Order</button>
+</div>
+
+<div class="image6">
+  <img src="britannia.jpg" height="200px" width="200px">
+  <h1 style="font-size: smaller;"><center>britannia Brownie</center></h1>
+  <h5><center>₹110 <del>220</del></center></h5>
+  <button onclick="openOrderModal('Britannia Brownie', 110)">Order</button>
+</div><br><br><br><br><br><br>
+
+<div class="image7">
+  <img src="nutella.jpg" height="200px" width="200px">
+  <h1 style="font-size: smaller;"><center>Nutella Brownie</center></h1>
+  <h5><center>₹70 <del>250</del></center></h5>
+  <button onclick="openOrderModal('nutella Brownie', 70)">Order</button>
+</div>
+
+<div class="image8">
+  <img src="bbb.png" height="200px" width="200px">
+  <h1 style="font-size: smaller;"><center>Creamy Brownie</center></h1>
+  <h5><center>₹100 <del>150</del></center></h5>
+ <button onclick="openOrderModal('Creamy Brownie', 100)">Order</button>
+</div>
+
+<div class="image9">
+  <img src="bb.jpg" height="200px" width="200px">
+  <h1 style="font-size: smaller;"><center>Pure Caramel Brownie</center></h1>
+  <h5><center>₹80 <del>250</del></center></h5>
+ <button onclick="openOrderModal('Pur caramel Brownie', 80)">Order</button></a>
+</div>
+
+</div>
+<script>
+  let price = 0;
+  let quantity = 1;
+  let productName = '';
+
+  function openOrderModal(name, cost) {
+    productName = name;
+    price = cost;
+    quantity = 1;
+    document.getElementById("product-name").innerText = productName;
+    document.getElementById("price").innerText = "₹" + price;
+    document.getElementById("quantity").innerText = quantity;
+    document.getElementById("total").innerText = "₹" + price;
+    document.getElementById("orderModal").style.display = "block";
+  }
+
+  function closeModal() {
+    document.getElementById("orderModal").style.display = "none";
+  }
+
+  function updateTotal(change) {
+    quantity += change;
+    if (quantity < 1) quantity = 1;
+    document.getElementById("quantity").innerText = quantity;
+    document.getElementById("total").innerText = "₹" + (price * quantity);
+  }
+
+  function placeOrder() {
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const address = document.getElementById("address").value;
+
+    if (!name || !phone || !address) {
+      alert("Please fill all details.");
+      return;
+    }
+
+    alert("Order placed!\nThank you, " + name + "!");
+    console.log("Product:", productName);
+    console.log("Qty:", quantity);
+    console.log("Total:", price * quantity);
+    closeModal();
+  }
+</script>
+
+
+<div id="orderModal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <h2>Order: <span id="product-name">...</span></h2>
+    <p>Price: <span id="price">₹0</span></p>
+    <p>Quantity: 
+      <button onclick="updateTotal(-1)">-</button>
+      <span id="quantity">1</span>
+      <button onclick="updateTotal(1)">+</button>
+    </p>
+    <p>Total: <span id="total">₹0</span></p>
+
+    <h3>Your Details</h3>
+    <form onsubmit="event.preventDefault(); placeOrder();">
+      <input type="text" id="name" placeholder="Your Name" required><br><br>
+      <input type="tel" id="phone" placeholder="Phone Number" required><br><br>
+      <textarea id="address" placeholder="Your Address" required></textarea><br><br>
+      <button type="submit">Place Order</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

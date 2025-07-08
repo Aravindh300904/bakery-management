@@ -1,0 +1,87 @@
+.list h1{
+    font-size: 150px;
+    font-weight: bolder;
+    background: url("brown.jpg");
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-align: center;
+    margin-left: -260px;
+    margin-top: -20px;
+ }
+ marquee{
+    color: black;
+ }
+.list h4{
+     font-size: 30px;
+     margin-left: 590px;
+     margin-top: -230px;
+     color:black;
+     font-style: normal;
+ }
+.list h3{
+    font-size: 30px;
+       margin-left: 630px;
+       margin-top: -50px;
+       color: rgb(0, 0, 0);
+}
+.list h5{
+     font-size: 30px;
+     margin-left: 590px;
+     margin-top: -30px;
+     font-style:normal;
+     color: black;
+    
+
+}
+.head{
+    background-color: black;
+    color: white;
+    padding: 1px;
+}
+li{
+    display: inline;
+    padding-left: 160px;
+}
+a{
+     text-decoration: none;
+     color: white;
+}
+a:hover{
+    
+ color: yellow;
+ cursor: pointer;
+
+}
+.cake2{
+    background-color: white;
+        color: black;
+        font-size: 15px;
+        font-weight: lighter;
+        padding-left: 555px;  
+        font-family:'Times New Roman', Times, serif;
+
+   
+}
+.list{
+   background-image: url("top.jpg");
+   background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
+background-position: center;
+}
+.cake h1{
+    background-color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+        color: rgb(22, 22, 22);
+        padding-left: 555px;
+         font-size: px;
+          font-weight:lighter;
+          margin-top: -20px;
+}
+.about1{
+   margin-left: 200px;
+   display: inline-block;
+}
+
+
